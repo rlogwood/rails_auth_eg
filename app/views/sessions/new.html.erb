@@ -1,15 +1,16 @@
-<h1>Login</h1>
+
+<h1 class="title">Login</h1>
 <%= form_with model: @user, url: session_path do |form| %>
   <%= render partial: 'errors', locals: {form: form} %>
 
-  <div>
+  <div class="my-5">
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, class: "text-field" %>
   </div>
 
-  <div>
+  <div class="my-5">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: "text-field" %>
   </div>
 
   <div class="flex">

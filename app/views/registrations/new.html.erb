@@ -1,23 +1,26 @@
-<h1>Sign Up</h1>
-<%= form_with model: @user, url: registration_path do |form| %>
-  <%= render partial: 'errors', locals: {form: form} %>
+<h1 class="title">Sign Up</h1>
 
-  <div>
+<%= form_with model: @user, url: registration_path, class: "w-full" do |form| %>
+
+  <%= render partial: 'errors', locals: { form: form } %>
+
+  <div class="my-5">
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, class: "text-field" %>
   </div>
 
-  <div>
+  <div class="my-5">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: "text-field" %>
   </div>
 
-  <div>
+  <div class="my-5">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "text-field" %>
   </div>
 
   <div>
     <%= form.submit "Sign Up", class: "btn-primary" %>
   </div>
+
 <% end %>

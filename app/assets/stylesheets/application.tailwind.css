@@ -2,18 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/*
+        rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer
+ */
 @layer components {
     .btn-primary {
-        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg;
+        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg cursor-pointer;
     }
 
     .btn-secondary {
-        @apply bg-gray-300  hover:bg-gray-400 ml-2 py-2 px-4 rounded-lg;
+        @apply bg-gray-100  hover:bg-gray-200 ml-2 py-2 px-4 rounded-lg;
     }
 
     .nav-link {
         @apply text-blue-500 underline m-2;
+    }
+
+    .text-field {
+        @apply block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full;
+    }
+
+    .checkbox-field {
+        @apply block mt-2 h-5 w-5;
+    }
+
+    .title {
+        @apply  block text-4xl p-2;
+    }
+
+    .error-message {
+        @apply text-lg;
+    }
+
+    .error-list {
+        @apply mt-2 text-red-900 text-sm font-bold bg-gray-200 border-red-900 border rounded-md p-2;
+    }
+
+    /*flex flex-col items-center max-w-md mx-auto */
+    .notices {
+        @apply border-gray-800;
+    }
+
+    .notice-msg {
+        @apply text-green-800 text-lg font-bold;
+    }
+
+    .alert-msg {
+        @apply text-red-900 font-extrabold;
     }
 }
 

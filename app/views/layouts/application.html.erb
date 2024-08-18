@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title><%= content_for(:title) || "Rails Auth Eg" %></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -18,19 +18,14 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<body class="bg-gray-300">
-<div><%= notice %></div>
-<div><%= alert %></div>
-<% if user_signed_in? %>
-  <%= link_to "Edit Password", edit_password_path, class: "nav-link"  %>
-  <%= button_to "Log out", session_path, method: :delete, class: "nav-link" %>
-<% else %>
-<%= link_to "Sign Up", new_registration_path, class: "nav-link" %>
-<%= link_to "Log in", new_session_path, class: "nav-link" %>
-<% end %>
+<body class="bg-gray-300 min-h-screen">
 
-<main class="container mx-auto mt-2 px-5 flex">
+<%= render partial: "header" %>
+
+<!-- main class="container mx-auto mt-2 px-5" -->
+<main class="container mt-w flex flex-col items-center max-w-md mx-auto">
   <%= yield %>
 </main>
+
 </body>
 </html>
