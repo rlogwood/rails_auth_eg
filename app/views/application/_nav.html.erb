@@ -1,4 +1,7 @@
-<nav class="container mt-w flex flex-row items-center max-w-md mx-auto">
+
+<!-- container mt-w flex flex-row items-center max-w-md mx-auto -->
+
+<nav class="flex flex-row">
   <% if user_signed_in? %>
     <%= link_to "Edit Password", edit_password_path, class: "nav-link" %>
     <%= button_to "Log out", session_path, method: :delete, class: "nav-link" %>

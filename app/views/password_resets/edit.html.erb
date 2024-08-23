@@ -1,0 +1,21 @@
+
+<h1 class="title">Reset Password</h1>
+<%= form_with model: @user, url: password_reset_path(token: params[:token]) do |form| %>
+  <%= render partial: 'errors', locals: {form: form} %>
+
+  <div class="my-5">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: "text-field" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "text-field" %>
+  </div>
+
+  <div class="flex">
+    <div>
+      <%= form.submit "Reset Password", class: "btn-primary" %>
+    </div>
+  </div>
+<% end %>

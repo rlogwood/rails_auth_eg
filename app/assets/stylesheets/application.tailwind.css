@@ -30,12 +30,12 @@
         @apply  block text-4xl p-2;
     }
 
-    .error-message {
-        @apply text-lg;
+    .error-msg {
+        @apply text-lg text-red-900 font-bold;
     }
 
     .error-list {
-        @apply mt-2 text-red-900 text-sm font-bold bg-gray-200 border-red-900 border rounded-md p-2;
+        @apply mt-2 bg-gray-200 border-red-900 border rounded-md p-2;
     }
 
     /*flex flex-col items-center max-w-md mx-auto */

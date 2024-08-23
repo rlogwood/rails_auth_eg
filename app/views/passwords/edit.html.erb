@@ -1,0 +1,28 @@
+<h1 class="title">Update Password</h1>
+
+<%= form_with model:current_user, url: password_path do |form| %>
+  <%= render partial: "errors", locals: { form: form }  %>
+
+  <div class="my-5">
+    <%= form.label :password_challenge, "Current Password" %>
+    <%= form.password_field :password_challenge, class: "text-field" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :password, "New Password" %>
+    <%= form.password_field :password, class: "text-field" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "text-field" %>
+  </div>
+
+
+  <div class="flex">
+    <div>
+      <%= form.submit "Update Password", class: "btn-primary" %>
+    </div>
+  </div>
+
+<% end %>

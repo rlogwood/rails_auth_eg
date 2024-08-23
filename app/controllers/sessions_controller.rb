@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  # TODO: determine best settings for rate_limit
+  rate_limit to: 5, within: 1.minutes, by: -> { request.remote_ip },
+             with: -> { head :too_many_requests, alert: "Too many requests"}
+
+    # with: -> { status :too_many_requests }
   def destroy
     logout current_user
     redirect_to root_path, notice: "You have been logged out."
