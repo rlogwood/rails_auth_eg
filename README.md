@@ -1,24 +1,20 @@
-# README
+# Example Implementation of Rails 7.1 Authentication
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This code was created from the following video:
+[GoRails Rails 7.1 Authentication From Scratch](https://youtu.be/Hb9WtQf9K60?si=7JtHXMlzqTPVu9iY)
 
-Things you may want to cover:
+### Installing / Running the app
+```shell
+git clone https://github.com/rlogwood/rails_auth_eg.git
+cd rails_auth_eg
+bin/bundle
+bin/rails db:prepare
+bin/dev
+```
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### The app was originally created with the following options:
+```shell
+rails new (appname) --asset-pipeline=propshaft --javascript=importmap --css=tailwind --database=sqlite3
+```
