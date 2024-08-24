@@ -18,6 +18,19 @@ bin/dev
 rails new (appname) --asset-pipeline=propshaft --javascript=importmap --css=tailwind --database=sqlite3
 ```
 
+### Experiment with rate limiting
+Rate limiting was added to the sessions controller as follows.
+see [Rate Limiting Requests in Rails 7.2](https://youtu.be/n0GdAHGRMhE?si=PQTEfAe56Oh0kg2Q)
+```ruby
+class SessionsController < ApplicationController
+  # TODO: determine best settings for rate_limit
+  rate_limit to: 5, within: 1.minutes, by: -> { request.remote_ip },
+             with: -> { head :too_many_requests, alert: "Too many requests"}
+
+```
+
+
+
 ### Password resets
 To test password resets, look for the generated email in the log and cut and paste the link found. Here's an example:
 ```html
@@ -38,7 +51,7 @@ To test password resets, look for the generated email in the log and cut and pas
 23:30:11 web.1  | <!-- END app/views/layouts/mailer.html.erb -->
 ```
 
-# Tailwind Intellisense for RubyMine Users
+### Tailwind Intellisense for RubyMine Users
 ```shell
 yarn add -D tailwindcss
 # Restart the IDE, TailwindCSS intellisense will start to work
